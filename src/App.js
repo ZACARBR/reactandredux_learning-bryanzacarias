@@ -1,25 +1,17 @@
-import logo from './logo.svg';
+import React, { useState }from 'react';
 import './App.css';
 
 function App() {
+  const [favorite, setFavorite] = useState ("singing");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>My favorite thing to do is {favorite}!</h1>
+      <button className='button' onClick={()=>setFavorite("reading")}>Reading</button>
+      <button className='button' onClick={()=>setFavorite("singing")}>Singing</button>
+      <button className='button' onClick={()=>setFavorite("dancing")}>Dancing</button>
+      <button className='button' onClick={()=>setFavorite("watching movies")}>Watching Movies</button>
+      
     </div>
   );
 }
-
 export default App;
